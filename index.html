@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hagar Mahmoud Ahmed | AI/ML Engineer & Software Tester</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4217f7ea96.js" crossorigin="anonymous"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                            violet: '#8b5cf6',
+                            fuchsia: '#d946ef',
+                            accent: '#c084fc',
+                        },
+                        dark: {
+                            bg: '#0b0914',
+                            card: '#130f26',
+                            border: '#231b42',
+                            input: '#1a1433',
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(147, 51, 234, 0.4)',
+                        'glow-fuchsia': '0 0 25px -5px rgba(217, 70, 239, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0914;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #231b42;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b2a6d;
+        }
+        
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(19, 15, 38, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-light {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-purple-50/40 dark:bg-dark-bg text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300 antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Sticky Header Navigation -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-brand-fuchsia flex items-center justify-center text-white font-bold text-xl shadow-glow group-hover:scale-105 transition-transform">
+                        HM
+                    </span>
+                    <span class="font-extrabold text-xl tracking-tight text-gray-900 dark:text-white">
+                        Hagar<span class="text-brand-500">.</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/60 dark:bg-dark-card/60 px-4 py-1.5 rounded-full border border-purple-100 dark:border-dark-border backdrop-blur-md shadow-sm">
+                    <a href="#about" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">About</a>
+                    <a href="#skills" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">Skills</a>
+                    <a href="#experience" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">Projects</a>
+                    <a href="#certifications" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">Certifications</a>
+                    <a href="#contact" class="nav-link px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-300 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions: Dark Mode Toggle & Resume CTA -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <button id="themeToggle" class="p-2.5 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-600 dark:text-gray-300 hover:border-brand-500 transition-all" aria-label="Toggle Theme">
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-brand-700"></i>
+                    </button>
+                    <!-- REPLACE WITH YOUR RESUME PDF URL -->
+                    <a href="https://drive.google.com/file/d/1kjP6LYvmaWhC7Znbt8AKggFlDdK4ddDm/view?usp=sharing" data-resume target="_blank" class="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-700 via-brand-600 to-brand-fuchsia hover:from-brand-600 hover:to-brand-500 shadow-glow transition-all hover:scale-105 active:scale-95">
+                        <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                        Resume
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden space-x-2">
+                    <button id="themeToggleMobile" class="p-2 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-600 dark:text-gray-300">
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-brand-700"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="p-2 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-700 dark:text-gray-200">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-x-0 top-[73px] bg-white/95 dark:bg-dark-bg/95 border-b border-purple-100 dark:border-dark-border backdrop-blur-xl transition-all">
+            <div class="px-4 pt-3 pb-6 space-y-2">
+                <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">About</a>
+                <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">Skills</a>
+                <a href="#experience" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">Experience</a>
+                <a href="#projects" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">Projects</a>
+                <a href="#certifications" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">Certifications</a>
+                <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-dark-card">Contact</a>
+                <!-- REPLACE WITH YOUR RESUME PDF URL -->
+                <a href="https://drive.google.com/file/d/1kjP6LYvmaWhC7Znbt8AKggFlDdK4ddDm/view?usp=sharing" data-resume target="_blank" class="flex items-center justify-center w-full mt-4 px-4 py-2.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-brand-700 via-brand-600 to-brand-fuchsia shadow-glow">
+                    <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-600/15 dark:bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-brand-fuchsia/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left Text Column -->
+                <div class="lg:col-span-7 text-center lg:text-left" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-600 dark:text-brand-300 text-xs sm:text-sm font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Available for AI/ML & QA Opportunities</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-4">
+                        Hello, I'm <br class="hidden sm:inline"/>
+                        <span class="bg-gradient-to-r from-brand-600 via-brand-violet to-brand-fuchsia bg-clip-text text-transparent">Hagar Mahmoud</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl font-mono font-medium text-gray-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center lg:justify-start gap-2 items-center">
+                        <span>AI/ML Engineer</span>
+                        <span class="text-brand-500">•</span>
+                        <span>Software Tester</span>
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                        Passionate about constructing robust Machine Learning models, natural language pipelines, and rigorous software testing frameworks. Dedicated to optimizing software quality and algorithmic precision.
+                    </p>
+
+                    <!-- CTAs & Social Links -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#projects" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-700 via-brand-600 to-brand-fuchsia hover:from-brand-600 hover:to-brand-500 shadow-glow transition-all hover:-translate-y-0.5 flex items-center justify-center">
+                            <span>View Projects</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-gray-700 dark:text-gray-200 border border-purple-200 dark:border-dark-border hover:border-brand-500 bg-white/50 dark:bg-dark-card/50 backdrop-blur-sm transition-all hover:-translate-y-0.5 flex items-center justify-center">
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+
+                    <!-- Direct Social Profiles -->
+                    <div class="flex items-center justify-center lg:justify-start space-x-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Connect:</span>
+                        <!-- REPLACE WITH YOUR LINKEDIN URL -->
+                        <a href="https://www.linkedin.com/in/hagar-mahmoud-308871345" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-all" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-square-linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <!-- REPLACE WITH YOUR GITHUB URL -->
+                        <a href="https://github.com/hagarabseed" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-all" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:hagarsaad301@gmail.com" class="p-2.5 rounded-xl border border-purple-200 dark:border-dark-border bg-white dark:bg-dark-card text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-all" aria-label="Email Address">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Column -->
+                <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Glowing Ring Frame -->
+                        <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-brand-700 via-brand-violet to-brand-fuchsia rotate-6 opacity-70 blur-lg animate-pulse"></div>
+                        <div class="relative w-full h-full rounded-3xl overflow-hidden border-2 border-purple-200/30 shadow-2xl bg-dark-card">
+                            <!-- REPLACE WITH YOUR PROFILE IMAGE URL -->
+                            <img src="https://lh3.googleusercontent.com/d/1JNRF1O0Bg2Km_nE_kW9AADdkEMDo1jYU" 
+                                 alt="Hagar Mahmoud Ahmed - Profile Photo" 
+                                 class="w-full h-full object-cover object-center filter grayscale hover:grayscale-0 transition-all duration-500"
+                                 onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/1JNRF1O0Bg2Km_nE_kW9AADdkEMDo1jYU';">
+                        </div>
+
+                        <!-- Badge Overlay 1 -->
+                        <div class="absolute -bottom-4 -left-4 bg-white dark:bg-dark-card p-3 rounded-2xl border border-purple-200 dark:border-dark-border shadow-xl flex items-center space-x-3" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="p-2 rounded-xl bg-brand-500/10 text-brand-500">
+                                <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Specialization</p>
+                                <p class="text-xs font-bold text-gray-900 dark:text-white">Artificial Intelligence</p>
+                            </div>
+                        </div>
+
+                        <!-- Badge Overlay 2 -->
+                        <div class="absolute -top-4 -right-4 bg-white dark:bg-dark-card p-3 rounded-2xl border border-purple-200 dark:border-dark-border shadow-xl flex items-center space-x-3" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="p-2 rounded-xl bg-brand-fuchsia/10 text-brand-fuchsia">
+                                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">QA & Testing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-purple-100/40 dark:bg-dark-card/40 border-y border-purple-100 dark:border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Get To Know Me</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">About Hagar Mahmoud</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- About Description & Mission -->
+                <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
+                    <div class="bg-white dark:bg-dark-card p-6 sm:p-8 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                            <i data-lucide="user" class="w-5 h-5 text-brand-500 mr-2"></i>
+                            Career Objective
+                        </h4>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+                            Driven AI/ML Engineer and Software Tester skilled in deep learning, natural language processing and quality assurance. Seeking a hands-on role to build scalable algorithms and rigorous testing frameworks, optimize software reliability, and contribute to innovative projects while gaining practical experience.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-brand-500 mb-2"></i>
+                            <h5 class="font-bold text-gray-900 dark:text-white">Academic Focus</h5>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Kafr El Sheikh University — Faculty of Artificial Intelligence (2024–2028)</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border">
+                            <i data-lucide="check-circle-2" class="w-8 h-8 text-brand-fuchsia mb-2"></i>
+                            <h5 class="font-bold text-gray-900 dark:text-white">Quality Mindset</h5>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Combines precise manual & automated testing routines with modern AI architecture design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Statistics Grid -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="p-6 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border text-center hover:border-brand-500 transition-colors">
+                        <span class="block text-4xl font-extrabold text-brand-500 mb-1">5+</span>
+                        <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Major Projects</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border text-center hover:border-brand-fuchsia transition-colors">
+                        <span class="block text-4xl font-extrabold text-brand-fuchsia mb-1">4+</span>
+                        <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Specialization Tracks</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border text-center hover:border-brand-violet transition-colors">
+                        <span class="block text-4xl font-extrabold text-brand-violet mb-1">100%</span>
+                        <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">QA Dedication</span>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border text-center hover:border-purple-400 transition-colors">
+                        <span class="block text-4xl font-extrabold text-purple-400 mb-1">2028</span>
+                        <span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Graduation Target</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills & Tools Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Technical Proficiency</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">Skills & Competencies</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Grid of Skill Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Programming Languages -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-brand-500/50 transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">Programming</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">C++</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Java</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Dart</span>
+                    </div>
+                </div>
+
+                <!-- AI & Data Science -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-brand-fuchsia/50 transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-fuchsia/10 text-brand-fuchsia">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">AI & Data Science</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Machine Learning</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Deep Learning</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">NLP</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Data Preprocessing</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Data Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Software Testing & QA -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-brand-violet/50 transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-brand-violet/10 text-brand-violet">
+                            <i data-lucide="check-square" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">Software Testing & QA</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">ISTQB Principles</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Manual Testing</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Test Scenario Design</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Jira Defect Tracking</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Agile Workflows</span>
+                    </div>
+                </div>
+
+                <!-- Libraries & Frameworks -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-purple-500/50 transition-all" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-purple-500/10 text-purple-500">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">ML Libraries</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Pandas</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">NumPy</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Scikit-learn</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Seaborn</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Matplotlib</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-indigo-500/50 transition-all" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
+                            <i data-lucide="wrench" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">Tools & Platforms</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Git & GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">Jira</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">C++ Graphics</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-purple-50 dark:bg-dark-border text-xs font-semibold text-purple-900 dark:text-purple-200">MS Office (Excel, Word)</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl p-6 border border-purple-100 dark:border-dark-border shadow-sm hover:border-fuchsia-500/50 transition-all" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 rounded-xl bg-fuchsia-500/10 text-fuchsia-500">
+                            <i data-lucide="languages" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white">Languages</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Arabic</span>
+                                <span class="text-brand-500">Native</span>
+                            </div>
+                            <div class="w-full bg-purple-100 dark:bg-dark-border rounded-full h-2">
+                                <div class="bg-brand-500 h-2 rounded-full w-full"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">English</span>
+                                <span class="text-brand-fuchsia">Professional</span>
+                            </div>
+                            <div class="w-full bg-purple-100 dark:bg-dark-border rounded-full h-2">
+                                <div class="bg-brand-fuchsia h-2 rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Internships Timeline Section -->
+    <section id="experience" class="py-20 bg-purple-100/40 dark:bg-dark-card/40 border-y border-purple-100 dark:border-dark-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Career Journey</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">Experience & Education</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Vertical Timeline Container -->
+            <div class="relative border-l-2 border-purple-200 dark:border-dark-border ml-4 sm:ml-32 space-y-12">
+
+                <!-- Timeline Item 1: DEPI -->
+                <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-purple-50 dark:ring-dark-bg"></div>
+                    <span class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-mono font-bold text-brand-500">2026</span>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Digital Egypt Pioneers Initiative (DEPI)</h4>
+                            <span class="sm:hidden text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-500/10 text-brand-500">2026</span>
+                        </div>
+                        <p class="text-sm font-semibold text-brand-500 mb-3">Software Testing Track Trainee</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                            Hands-on specialization in manual and automated quality assurance standards, structured bug reporting, and software development methodologies.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Java Fundamentals</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">ISTQB Manual Testing</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Jira Defect Tracking</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Agile Workflows</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Database Fundamentals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: NTI -->
+                <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-fuchsia ring-4 ring-purple-50 dark:ring-dark-bg"></div>
+                    <span class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-mono font-bold text-brand-fuchsia">2025</span>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">National Telecommunication Institute (NTI)</h4>
+                            <span class="sm:hidden text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-fuchsia/10 text-brand-fuchsia">2025</span>
+                        </div>
+                        <p class="text-sm font-semibold text-brand-fuchsia mb-3">Machine Learning Specialization Trainee</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                            Intensive training covering core machine learning pipeline engineering, data preprocessing strategies, exploratory data analysis (EDA), and probability models.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Python</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Pandas & NumPy</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Scikit-learn</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Supervised Learning</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Seaborn Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: Microsoft Student Club -->
+                <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-violet ring-4 ring-purple-50 dark:ring-dark-bg"></div>
+                    <span class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-mono font-bold text-brand-violet">2026</span>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Microsoft Student Club — KFS University</h4>
+                            <span class="sm:hidden text-xs font-mono font-bold px-2 py-0.5 rounded bg-brand-violet/10 text-brand-violet">2026</span>
+                        </div>
+                        <p class="text-sm font-semibold text-brand-violet mb-3">Data Analysis Member</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                            Cleaned complex Kaggle datasets, conducted exploratory feature engineering, and constructed concise visual reports for student activities.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Kaggle Data Cleaning</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Feature Exploration</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Visual Reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4: IEEE Student Branch -->
+                <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-purple-600 ring-4 ring-purple-50 dark:ring-dark-bg"></div>
+                    <span class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-mono font-bold text-purple-600">2025</span>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">IEEE Kafr El Sheikh Student Branch</h4>
+                            <span class="sm:hidden text-xs font-mono font-bold px-2 py-0.5 rounded bg-purple-600/10 text-purple-600">2025</span>
+                        </div>
+                        <p class="text-sm font-semibold text-purple-600 mb-3">Python Committee Member</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                            Collaborated in cross-functional ML pipeline implementations and technical workshops under Agile teamwork settings.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Python Scripting</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">Agile Teamwork</span>
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-purple-50 dark:bg-dark-border text-purple-900 dark:text-purple-200">ML Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5: Education -->
+                <div class="relative pl-8 sm:pl-10" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-purple-50 dark:ring-dark-bg"></div>
+                    <span class="hidden sm:block absolute -left-32 top-1 w-24 text-right text-xs font-mono font-bold text-indigo-400">2024 - 2028</span>
+                    <div class="bg-white dark:bg-dark-card p-6 rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Kafr El Sheikh University</h4>
+                            <span class="sm:hidden text-xs font-mono font-bold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400">2024–2028</span>
+                        </div>
+                        <p class="text-sm font-semibold text-indigo-400 mb-3">B.Sc. in Artificial Intelligence — Faculty of Artificial Intelligence</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Studying core computer science theory, algorithms, machine learning systems, natural language processing, and advanced discrete mathematics.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Project Showcase Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Portfolio Showcase</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">Featured Projects</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-12" data-aos="fade-up">
+                <button class="project-filter active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-gradient-to-r from-brand-700 via-brand-600 to-brand-fuchsia text-white shadow-glow" data-filter="all">
+                    All Projects
+                </button>
+                <button class="project-filter px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border hover:border-brand-500 transition-all" data-filter="ai-ds">
+                    AI & Data Science
+                </button>
+                <button class="project-filter px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border hover:border-brand-500 transition-all" data-filter="embedded">
+                    Embedded & Hardware
+                </button>
+                <button class="project-filter px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 bg-white dark:bg-dark-card border border-purple-100 dark:border-dark-border hover:border-brand-500 transition-all" data-filter="gui">
+                    Software & GUI
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-purple-100 dark:border-dark-border shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all duration-300 flex flex-col" data-category="ai-ds" data-aos="fade-up">
+                    <div class="relative h-48 overflow-hidden group">
+                        <!-- REPLACE WITH YOUR PROJECT IMAGE URL -->
+                        <img src="https://lh3.googleusercontent.com/d/11CwwW2hOSec6g38aGa0KB7UW3tt6T62t" 
+                             alt="AI File Summarizer Thumbnail" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://drive.google.com/drive/folders/1CXdaK0Ee4ETyMGAmhNJY_qwWivfqNyjI';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-brand-600/90 text-white backdrop-blur-md">
+                            AI & Data Science
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">AI File Summarizer</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                Natural Language Processing application using Python and LLM integrations to process, structure, and condense extensive study materials automatically.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Python</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">NLP</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">LLM APIs</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-100 dark:border-dark-border">
+                            <!-- REPLACE WITH YOUR GITHUB URL -->
+                            <a href="https://drive.google.com/drive/folders/1CXdaK0Ee4ETyMGAmhNJY_qwWivfqNyjI" data-github class="flex-1 py-2 rounded-lg border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Code
+                            </a>
+                            <a href="https://lnkd.in/p/eyyDH8Fh" data-demo class="flex-1 py-2 rounded-lg bg-gradient-to-r from-brand-700 to-brand-600 text-center text-xs font-semibold text-white hover:from-brand-600 hover:to-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1.5"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <!-- Project Card: Student Management System CLI -->
+                <div class="project-card bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-purple-100 dark:border-dark-border shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all duration-300 flex flex-col" data-category="software" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden group">
+                        <img src="https://lh3.googleusercontent.com/d/1nKFnP2bCMapIUpjfmcqMBXD81PCgmC2I" 
+                            alt="Student Management System CLI" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/130f26/ffffff?text=Student+CLI+System';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-brand-600/90 text-white backdrop-blur-md">
+                            Software & CLI
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Student Management System</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                A modular Command Line Interface (CLI) application designed for managing student profiles, academic records, and course enrollments efficiently with structured data storage.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Python</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">CLI</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">OOP</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-100 dark:border-dark-border">
+                            <a href="https://github.com/hagarabseed/Student-CLI-sys.git" target="_blank" rel="noopener noreferrer" data-github class="flex-1 py-2 rounded-lg border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Repository
+                            </a>
+                            <a href="https://github.com/hagarabseed/Student-CLI-sys.git" target="_blank" rel="noopener noreferrer" data-demo class="flex-1 py-2 rounded-lg bg-gradient-to-r from-brand-700 to-brand-600 text-center text-xs font-semibold text-white hover:from-brand-600 hover:to-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1.5"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-purple-100 dark:border-dark-border shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all duration-300 flex flex-col" data-category="embedded" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden group">
+                        <!-- REPLACE WITH YOUR PROJECT IMAGE URL -->
+                        <img src="https://lh3.googleusercontent.com/d/1jim3UB_apyyFOBCkzNABjgVbRtJWTyYf" 
+                             alt="CNC Sand Plotter Thumbnail" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://lnkd.in/p/ekc54FV2';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-brand-fuchsia/90 text-white backdrop-blur-md">
+                            Embedded & Hardware
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">CNC Sand Plotter</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                Hardware control logic engineered in C++ for automated geometric pattern plotting on sand beds with precise motor control.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">C++</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Hardware Control</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Robotics</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-100 dark:border-dark-border">
+                            <!-- REPLACE WITH YOUR GITHUB URL -->
+                            <a href="https://github.com/DIY-Machines/Kinetic-Sand-Art-Table.git" data-github class="flex-1 py-2 rounded-lg border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Code
+                            </a>
+                            <a href="https://lnkd.in/p/ekc54FV2" data-demo class="flex-1 py-2 rounded-lg bg-gradient-to-r from-brand-700 to-brand-600 text-center text-xs font-semibold text-white hover:from-brand-600 hover:to-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1.5"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-purple-100 dark:border-dark-border shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all duration-300 flex flex-col" data-category="gui" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden group">
+                        <!-- REPLACE WITH YOUR PROJECT IMAGE URL -->
+                        <img src="https://lh3.googleusercontent.com/d/1-7XQjjgoVqT5xRiS7owQ8fchNHZneuVz" 
+                             alt="Stop Watch" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.onerror=null; this.src='https://github.com/hagarabseed/StopWatch.git';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-brand-violet/90 text-white backdrop-blur-md">
+                            Software & GUI
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">GUI Calculator & Stopwatch</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                C++ desktop applications featuring visual interfaces built using <code class="font-mono text-brand-500">graphics.h</code> library for real-time calculations.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">C++</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">graphics.h</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">GUI Design</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-100 dark:border-dark-border">
+                            <!-- REPLACE WITH YOUR GITHUB URL -->
+                            <a href="https://github.com/hagarabseed/StopWatch.git" data-github class="flex-1 py-2 rounded-lg border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Code
+                            </a>
+                            <a href="https://github.com/hagarabseed/StopWatch.git" data-demo class="flex-1 py-2 rounded-lg bg-gradient-to-r from-brand-700 to-brand-600 text-center text-xs font-semibold text-white hover:from-brand-600 hover:to-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1.5"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Project 5: Amusement Park Management System -->
+                <div class="project-card bg-white dark:bg-dark-card rounded-2xl overflow-hidden border border-purple-100 dark:border-dark-border shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all duration-300 flex flex-col" data-category="java" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-48 overflow-hidden group">
+                        <!-- PROJECT IMAGE -->
+                        <img src="https://lh3.googleusercontent.com/d/1O2i9MIjqw8p4KFDJEt3FDhQsF7DmnDoQ" 
+                            alt="Amusement Park Management System Thumbnail" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.src='https://placehold.co/800x400/130f26/ffffff?text=Amusement+Park+System';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-80"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-brand-violet/90 text-white backdrop-blur-md">
+                            Java & OOP
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Amusement Park System</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                An object-oriented Java system designed to manage amusement park operations, including visitor ticketing, ride management, and automated workflow tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-1.5 mb-6">
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Java</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">OOP</span>
+                                <span class="px-2 py-0.5 text-xs rounded bg-purple-50 dark:bg-dark-border font-mono text-purple-900 dark:text-purple-200">Maven</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-purple-100 dark:border-dark-border">
+                            <a href="https://github.com/hagarabseed/Amusement-Park-System.git" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-lg border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Repository
+                            </a>
+                            <a href="https://github.com/hagarabseed/Amusement-Park-System.git" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 rounded-lg bg-gradient-to-r from-brand-700 to-brand-600 text-center text-xs font-semibold text-white hover:from-brand-600 hover:to-brand-500 transition-colors flex items-center justify-center">
+                                <i data-lucide="external-link" class="w-4 h-4 mr-1.5"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-purple-100/40 dark:bg-dark-card/40 border-y border-purple-100 dark:border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Verified Credentials</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">Certifications & Honors</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+                
+                <a href="https://drive.google.com/drive/folders/1Pk0ctrpcwpO3I0jyGpjx-TQYfLbGet63?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center text-xs font-semibold text-brand-500 hover:underline mt-4">
+                <i data-lucide="folder-open" class="w-4 h-4 mr-1"></i> View All Certifications on Google Drive
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Cert 1: ITIDA & eyouth Freelance Training -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border p-6 shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden bg-purple-50 dark:bg-dark-border border border-purple-100 dark:border-dark-border flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1h9Issg2QPwqjFRRaF4Z7HwByvLrVmino" 
+                                alt="ITIDA Gigs Certificate Preview" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/130f26/ffffff?text=ITIDA+Gigs';">
+                            <span class="absolute top-2 right-2 px-2.5 py-1 rounded bg-dark-bg/80 text-white text-xs font-mono font-bold">2026</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Freelance Training Program</h4>
+                        <p class="text-xs font-semibold text-brand-500 mb-2">ITIDA & eyouth (ITIDA Gigs)</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                            Graduated from a 3-month intensive training program covering key freelancing skills and market readiness.
+                        </p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1h9Issg2QPwqjFRRaF4Z7HwByvLrVmino/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> View Certificate
+                    </a>
+                </div>
+
+                <!-- Cert 2: NTI Machine Learning Training -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border p-6 shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden bg-purple-50 dark:bg-dark-border border border-purple-100 dark:border-dark-border flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1UouAFzV8PTmglrpBa7C7LjPIlPdFpxCd" 
+                                alt="NTI Machine Learning Certificate Preview" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/130f26/ffffff?text=NTI+Machine+Learning';">
+                            <span class="absolute top-2 right-2 px-2.5 py-1 rounded bg-dark-bg/80 text-white text-xs font-mono font-bold">2025</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Machine Learning Course</h4>
+                        <p class="text-xs font-semibold text-brand-fuchsia mb-2">National Telecommunication Institute (NTI)</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                            Completed 120 training hours (90h Technical + 30h Freelancing) with an outstanding score of 98.5%.
+                        </p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1UouAFzV8PTmglrpBa7C7LjPIlPdFpxCd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> View Certificate
+                    </a>
+                </div>
+
+                <!-- Cert 3: NVIDIA Getting Started with Deep Learning -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border p-6 shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden bg-purple-50 dark:bg-dark-border border border-purple-100 dark:border-dark-border flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1rV1DO_MT8cWw4dlxxXJ9EVnN55kszfPO" 
+                                alt="NVIDIA Certificate Preview" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/130f26/ffffff?text=NVIDIA+Deep+Learning';">
+                            <span class="absolute top-2 right-2 px-2.5 py-1 rounded bg-dark-bg/80 text-white text-xs font-mono font-bold">2025</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Getting Started with Deep Learning</h4>
+                        <p class="text-xs font-semibold text-brand-violet mb-2">NVIDIA Deep Learning Institute</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                            Certificate of Competency demonstrating practical expertise in deep learning model training and development.
+                        </p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1rV1DO_MT8cWw4dlxxXJ9EVnN55kszfPO/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Verify Credential
+                    </a>
+                </div>
+
+                <!-- Cert 4: Build with AI Masr Edition -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border p-6 shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden bg-purple-50 dark:bg-dark-border border border-purple-100 dark:border-dark-border flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1MJehvU0vw9k6gjA2qnsl73p59CqBW2F7" 
+                                alt="Build with AI Certificate Preview" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/130f26/ffffff?text=Build+with+AI';">
+                            <span class="absolute top-2 right-2 px-2.5 py-1 rounded bg-dark-bg/80 text-white text-xs font-mono font-bold">2026</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Build with AI: MASR Edition</h4>
+                        <p class="text-xs font-semibold text-brand-500 mb-2">Google for Developers & ITI</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                            Certificate of attendance for active participation in the "Build with AI Masr Edition" virtual sessions.
+                        </p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1MJehvU0vw9k6gjA2qnsl73p59CqBW2F7/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> View Certificate
+                    </a>
+                </div>
+
+                <!-- Cert 5: AI For Everyone (Mahara-Tech) -->
+                <div class="bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border p-6 shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between" data-aos="fade-up" data-aos-delay="500">
+                    <div>
+                        <div class="relative h-40 mb-6 rounded-xl overflow-hidden bg-purple-50 dark:bg-dark-border border border-purple-100 dark:border-dark-border flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/d/1NTAx1GWesdwAfdXYmXPPb6WtyHAGT4aQ" 
+                                alt="Mahara-Tech AI Certificate Preview" 
+                                class="w-full h-full object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/130f26/ffffff?text=AI+For+Everyone';">
+                            <span class="absolute top-2 right-2 px-2.5 py-1 rounded bg-dark-bg/80 text-white text-xs font-mono font-bold">2025</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">AI For Everyone (AI4E)</h4>
+                        <p class="text-xs font-semibold text-brand-fuchsia mb-2">ITI Platform (Mahara-Tech)</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                            Completion certificate covering foundational principles of Artificial Intelligence from the Artificial Intelligence Academy.
+                        </p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1NTAx1GWesdwAfdXYmXPPb6WtyHAGT4aQ/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl border border-purple-200 dark:border-dark-border text-center text-xs font-semibold text-gray-700 dark:text-gray-300 hover:text-brand-500 hover:border-brand-500 transition-colors flex items-center justify-center">
+                        <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> View Certificate
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-2">Let's Connect</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">Get In Touch</h3>
+                <div class="w-12 h-1 bg-gradient-to-r from-brand-600 to-brand-fuchsia mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+                    <div class="p-6 bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm flex items-start space-x-4">
+                        <div class="p-3 rounded-xl bg-brand-500/10 text-brand-500 shrink-0">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 dark:text-white">Email Address</h4>
+                            <a href="mailto:hagarsaad301@gmail.com" class="text-sm text-gray-600 dark:text-gray-300 hover:text-brand-500 transition-colors">
+                                hagarsaad301@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm flex items-start space-x-4">
+                        <div class="p-3 rounded-xl bg-brand-violet/10 text-brand-violet shrink-0">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 dark:text-white">Location</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">
+                                Kafr El Sheikh, Egypt
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm">
+                        <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-3">Social Profiles</h4>
+                        <div class="flex space-x-3">
+                            <!-- REPLACE WITH YOUR LINKEDIN URL -->
+                            <a href="https://www.linkedin.com/in/hagar-mahmoud-308871345" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-purple-50 dark:bg-dark-border text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-brand-500/10 transition-all" aria-label="LinkedIn Profile">
+                                <i class="fa-brands fa-square-linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <!-- REPLACE WITH YOUR GITHUB URL -->
+                            <a href="https://github.com/hagarabseed" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-purple-50 dark:bg-dark-border text-gray-700 dark:text-gray-200 hover:text-brand-500 hover:bg-brand-500/10 transition-all" aria-label="GitHub Profile">
+                                <i class="fa-brands fa-github" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7" data-aos="fade-left">
+                    <form id="contactForm" class="p-8 bg-white dark:bg-dark-card rounded-2xl border border-purple-100 dark:border-dark-border shadow-sm space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 dark:text-gray-400 mb-2">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-purple-50/50 dark:bg-dark-bg border border-purple-100 dark:border-dark-border text-gray-900 dark:text-white text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 dark:text-gray-400 mb-2">Your Email</label>
+                                <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-purple-50/50 dark:bg-dark-bg border border-purple-100 dark:border-dark-border text-gray-900 dark:text-white text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-600 dark:text-gray-400 mb-2">Subject</label>
+                            <input type="text" required placeholder="Project Inquiry / Job Opportunity" class="w-full px-4 py-3 rounded-xl bg-purple-50/50 dark:bg-dark-bg border border-purple-100 dark:border-dark-border text-gray-900 dark:text-white text-sm focus:outline-none focus:border-brand-500 transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-600 dark:text-gray-400 mb-2">Message</label>
+                            <textarea rows="5" required placeholder="Hello Hagar, I would like to discuss..." class="w-full px-4 py-3 rounded-xl bg-purple-50/50 dark:bg-dark-bg border border-purple-100 dark:border-dark-border text-gray-900 dark:text-white text-sm focus:outline-none focus:border-brand-500 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-brand-700 via-brand-600 to-brand-fuchsia hover:from-brand-600 hover:to-brand-500 shadow-glow transition-all flex items-center justify-center">
+                            <i data-lucide="send" class="w-4 h-4 mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-dark-bg border-t border-purple-100 dark:border-dark-border py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+                © 2026 Hagar Mahmoud Ahmed. All rights reserved.
+            </p>
+
+            <div class="flex items-center space-x-4">
+                <!-- REPLACE WITH YOUR LINKEDIN URL -->
+                <a href="https://www.linkedin.com/in/hagar-mahmoud-308871345" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-500 transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                <!-- REPLACE WITH YOUR GITHUB URL -->
+                <a href="https://github.com/hagarabseed" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-500 transition-colors">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                <a href="#hero" class="p-2 rounded-lg bg-purple-50 dark:bg-dark-card text-gray-600 dark:text-gray-300 hover:text-brand-500 transition-colors" aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast Element -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-gradient-to-r from-brand-700 to-brand-fuchsia text-white px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3">
+        <i data-lucide="check-circle" class="w-6 h-6"></i>
+        <div>
+            <p class="font-bold text-sm">Message Sent!</p>
+            <p class="text-xs text-purple-100">Thank you for reaching out. I will respond promptly.</p>
+        </div>
+    </div>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Initialize Animate On Scroll (AOS)
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+            });
+
+            // Dark Mode Switcher & Persistence
+            const themeToggles = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')];
+            
+            // Check stored preference or default to dark
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+
+            themeToggles.forEach(btn => {
+                if (!btn) return;
+                btn.addEventListener('click', () => {
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            });
+
+            // Mobile Menu Drawer Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Navbar Dynamic Blur on Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/80', 'dark:bg-dark-bg/80', 'backdrop-blur-md', 'shadow-sm', 'border-purple-100/50', 'dark:border-dark-border/50');
+                } else {
+                    navbar.classList.remove('bg-white/80', 'dark:bg-dark-bg/80', 'backdrop-blur-md', 'shadow-sm', 'border-purple-100/50', 'dark:border-dark-border/50');
+                }
+            });
+
+            // Project Filter Logic
+            const filterBtns = document.querySelectorAll('.project-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-gradient-to-r', 'from-brand-700', 'via-brand-600', 'to-brand-fuchsia', 'text-white', 'shadow-glow');
+                        b.classList.add('text-gray-600', 'dark:text-gray-300', 'bg-white', 'dark:bg-dark-card');
+                    });
+
+                    btn.classList.add('active', 'bg-gradient-to-r', 'from-brand-700', 'via-brand-600', 'to-brand-fuchsia', 'text-white', 'shadow-glow');
+                    btn.classList.remove('text-gray-600', 'dark:text-gray-300', 'bg-white', 'dark:bg-dark-card');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contactForm');
+            const toast = document.getElementById('toast');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+
+                contactForm.reset();
+
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 4000);
+            });
+        });
+    </script>
+</body>
+</html>
